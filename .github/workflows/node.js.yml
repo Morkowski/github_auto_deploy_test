@@ -22,14 +22,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      env:
-        VITE_PLAYER_KEY: ${{ secrets.PLAYER_KEY }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+      env:
+        VITE_PLAYER_KEY: ${{ secrets.PLAYER_KEY }}
     - run: npm install
-    - run: npm run build
+    - run: VITE_PLAYER_KEY=$VITE_PLAYER_KEY npm run build
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
