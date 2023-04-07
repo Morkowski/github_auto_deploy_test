@@ -4,7 +4,7 @@ import { UIFactory } from 'bitmovin-player-ui';
 import 'bitmovin-player-ui/dist/css/bitmovinplayer-ui.min.css';
 
 const playerConfig = {
-    key: 'YOUR KEY HERE',
+    key: import.meta.env.VITE_PLAYER_KEY || 'YOUR KEY HERE',
     ui: false
 };
 

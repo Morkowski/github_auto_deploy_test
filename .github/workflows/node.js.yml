@@ -22,6 +22,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
+      env:
+          VITE_PLAYER_KEY: ${{ secrets.PLAYER_KEY }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
