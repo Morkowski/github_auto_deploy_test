@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm install
-    # https://stackoverflow.com/a/61485186
+    # https://stackoverflow.com/a/71053665
     - name: Create env file and build
       run: |
         touch .env
