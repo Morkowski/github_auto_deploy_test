@@ -28,12 +28,13 @@ jobs:
         cache: 'npm'
     - run: npm install
     # https://stackoverflow.com/a/61485186
-    - name: Create env file
+    - name: Create env file and build
       run:
         touch .env
-        echo VITE_PLAYER_KEY=${{ secrets.PLAYER_KEY }} >> .env
-    - name: Build
-      run: npm run build
+        echo VITE_PLAYER_KEY=$PLAYER_KEY >> .env
+        npm run build
+      env:
+        PLAYER_KEY: ${{ secrets.PLAYER_KEY }}
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
