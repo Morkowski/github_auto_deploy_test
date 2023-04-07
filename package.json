@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bitmovin-player": "^8.0.0",
+    "bitmovin-player-ui": "^3.00.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
