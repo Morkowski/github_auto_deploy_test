@@ -29,7 +29,7 @@ jobs:
     - run: npm install
     # https://stackoverflow.com/a/61485186
     - name: Create env file and build
-      run:
+      run: |
         touch .env
         echo VITE_PLAYER_KEY=$PLAYER_KEY >> .env
         npm run build
