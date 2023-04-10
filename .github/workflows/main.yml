@@ -12,5 +12,5 @@ jobs:
         with:
           target: major
           github-token: ${{ secrets.PAT }}
-        # env:
-        #   PLAYER_KEY: ${{ secrets.PLAYER_KEY }}
+        env:
+          PAT: ${{ secrets.PAT }}
